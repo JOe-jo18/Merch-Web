@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Lines - Merchandise Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Merchandise Hub</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="vendors.html">Vendors</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="collections">
+            <h2>Product Lines</h2>
+            <button onclick="showAddCollectionModal()">Add New Collection</button>
+            <div id="collections-list">
+                <!-- Collections will be populated here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Merchandise Management System</p>
+    </footer>
+
+    <!-- Modal for adding collection -->
+    <div id="addCollectionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addCollectionModal')">&times;</span>
+            <h3>Add New Collection</h3>
+            <form id="addCollectionForm">
+                <label for="collectionName">Name:</label>
+                <input type="text" id="collectionName" required>
+                <label for="collectionDescription">Description:</label>
+                <textarea id="collectionDescription"></textarea>
+                <button type="submit">Add Collection</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

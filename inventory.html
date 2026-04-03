@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Overview - Merchandise Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Merchandise Hub</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="vendors.html">Vendors</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inventory">
+            <h2>Stock Overview</h2>
+            <div class="filters">
+                <select id="collectionFilter">
+                    <option value="">All Collections</option>
+                </select>
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="T-shirt">T-shirt</option>
+                    <option value="Hoodie">Hoodie</option>
+                    <option value="Cap">Cap</option>
+                    <option value="Sweater">Sweater</option>
+                    <option value="Armless Shirt">Armless Shirt</option>
+                    <option value="Jacket">Jacket</option>
+                </select>
+                <button onclick="applyFilters()">Apply Filters</button>
+            </div>
+            <button onclick="showAddSkuModal()">Add New Product</button>
+            <div id="inventory-list">
+                <!-- Inventory will be populated here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Merchandise Management System</p>
+    </footer>
+
+    <!-- Modal for adding SKU -->
+    <div id="addSkuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addSkuModal')">&times;</span>
+            <h3>Add New Product</h3>
+            <form id="addSkuForm">
+                <label for="skuCollection">Collection:</label>
+                <select id="skuCollection" required>
+                    <option value="">Select Collection</option>
+                </select>
+                <label for="skuType">Type:</label>
+                <select id="skuType" required>
+                    <option value="T-shirt">T-shirt</option>
+                    <option value="Hoodie">Hoodie</option>
+                    <option value="Cap">Cap</option>
+                    <option value="Sweater">Sweater</option>
+                    <option value="Armless Shirt">Armless Shirt</option>
+                    <option value="Jacket">Jacket</option>
+                </select>
+                <label for="skuDesign">Design:</label>
+                <input type="text" id="skuDesign" required>
+                <label for="skuColor">Color:</label>
+                <input type="text" id="skuColor" value="Black">
+                <label for="skuSize">Size:</label>
+                <select id="skuSize" required>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="OS">OS</option>
+                    <option value="2XL">2XL</option>
+                    <option value="3XL">3XL</option>
+                </select>
+                <label for="skuCost">Cost Price:</label>
+                <input type="number" id="skuCost" step="0.01" required>
+                <label for="skuSelling">Selling Price:</label>
+                <input type="number" id="skuSelling" step="0.01" required>
+                <label for="skuQuantity">Quantity:</label>
+                <input type="number" id="skuQuantity" value="30" required>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

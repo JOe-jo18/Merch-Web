@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Merchandise Hub</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="vendors.html">Vendors</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p id="total-products">73</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Inventory</h3>
+                    <p id="total-inventory">2190</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Today's Sales</h3>
+                    <p id="today-sales">$0.00</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Vendors</h3>
+                    <p id="active-vendors">5</p>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <button onclick="addSale()">Record Sale</button>
+                <button onclick="addExpense()">Add Expense</button>
+                <button onclick="viewReports()">View Reports</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Merchandise Management System</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

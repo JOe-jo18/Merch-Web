@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - Merchandise Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Merchandise Hub</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="vendors.html">Vendors</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sales.html">Sales</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="vendors">
+            <h2>Team Members</h2>
+            <button onclick="showAddVendorModal()">Add New Vendor</button>
+            <div id="vendors-list">
+                <!-- Vendors will be populated here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Merchandise Management System</p>
+    </footer>
+
+    <!-- Modal for adding vendor -->
+    <div id="addVendorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addVendorModal')">&times;</span>
+            <h3>Add New Vendor</h3>
+            <form id="addVendorForm">
+                <label for="vendorName">Name:</label>
+                <input type="text" id="vendorName" required>
+                <label for="vendorPin">PIN (4 digits):</label>
+                <input type="password" id="vendorPin" maxlength="4" required>
+                <label for="vendorCollection">Collection:</label>
+                <select id="vendorCollection">
+                    <option value="">Select Collection</option>
+                </select>
+                <button type="submit">Add Vendor</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

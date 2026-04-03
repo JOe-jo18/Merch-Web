@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8f0; /* Mint background */
+    color: #000000; /* Black text */
+}
+
+header {
+    background-color: #48D1CC; /* Softer cyan */
+    color: #000000;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #48D1CC;
+        justify-content: center;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+h2 {
+    color: #48D1CC; /* Softer cyan */
+}
+
+/* Dashboard Stats */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.stat-card h3 {
+    margin-top: 0;
+}
+
+/* Responsive Stats */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* Lists */
+#collections-list, #vendors-list, #inventory-list, #sales-list, #expenses-list, #reports-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.item-card {
+    background-color: #ffffff;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #48D1CC;
+    color: #000000;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #48D1CC;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3CB371; /* Mint green */
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-top: 2rem;
+}
+
+.quick-actions button {
+    margin-right: 1rem;
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 1rem;
+}
+
+.filters select, .filters button {
+    margin-right: 1rem;
+    padding: 8px;
+}
+
+.report-filters {
+    margin-bottom: 1rem;
+}
+
+.report-filters input, .report-filters button {
+    margin-right: 1rem;
+    padding: 8px;
+}
